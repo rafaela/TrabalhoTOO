@@ -7,7 +7,8 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
-import too.trabalho.avaliacao.jdbc.CriaConexao;
+import too.trabalho.spa.dados.PesquisaRelatorio;
+import too.trabalho.spa.jdbc.CriaConexao;
 import too.trabalho.spa.tipos.Pesquisa;
 
 /**
@@ -73,6 +74,10 @@ public class PesquisaDAO {
 		return pesquisaList;
 	}//listaPesquisa
 	
+	/**
+	 * Obtém o código da resposta no banco de dados
+	 * @return uma lista contendo os códigos
+	 */
 	public List<Integer> obtemCodigo(){
 		String sql = "select codigo from pesquisa";
 		List<Integer> codigosList = new ArrayList<>();
@@ -92,7 +97,36 @@ public class PesquisaDAO {
 		}
 
 		return codigosList;
+	}
+	
+	/**
+	 * Obtém os cursos e o número de participante de cada curso
+	 * @return lista contendo os cursos e o número de participantes
+	 */
+	public List<PesquisaRelatorio> obtemCursos(){
+		String sql = "select * from qtd_curso()";
+		List<PesquisaRelatorio> relatorios = new ArrayList<>();
 		
+		PreparedStatement statement;
 		
+		try {
+			statement = connection.prepareStatement(sql);
+			ResultSet rs = statement.executeQuery();
+			
+			while (rs.next()){
+				PesquisaRelatorio relatorio = new PesquisaRelatorio();
+				relatorio.setNome(rs.getString("curso"));
+				relatorio.setQuantidade(rs.getInt("quantidade"));
+				relatorios.add(relatorio);
+			}	
+			rs.close();
+			statement.close();
+			
+			return relatorios;
+		} catch (SQLException e) {
+			//System.out.println("Falha ao obter os dados");
+			e.printStackTrace();
+			return null;
+		}
 	}
 }

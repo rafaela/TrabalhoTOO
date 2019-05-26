@@ -36,3 +36,24 @@ CREATE TABLE questionario(
 ALTER TABLE pesquisa OWNER TO spaadmin;
 
 ALTER TABLE questionario OWNER TO spaadmin;
+
+create type quantidade_curso as (curso character varying(255), quantidade int);
+
+select distinct curso, count(curso) from pesquisa where curso != '' group by curso 
+create or replace function qtd_curso() returns setof quantidade_curso as $$
+declare
+   tabela quantidade_curso%rowtype;
+   i int;
+
+begin
+   for tabela in select distinct curso, count(curso) as qtd from pesquisa
+      where curso != '' group by curso loop
+     return next tabela;
+   end loop;
+   
+   
+end
+
+$$ language 'plpgsql'
+
+select * from qtd_curso();

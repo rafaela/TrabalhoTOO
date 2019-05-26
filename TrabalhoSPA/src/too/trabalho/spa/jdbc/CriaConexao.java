@@ -1,4 +1,4 @@
-package too.trabalho.avaliacao.jdbc;
+package too.trabalho.spa.jdbc;
 
 import java.sql.Connection;
 import java.sql.DriverManager;

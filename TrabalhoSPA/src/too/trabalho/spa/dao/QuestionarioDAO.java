@@ -4,7 +4,7 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
 
-import too.trabalho.avaliacao.jdbc.CriaConexao;
+import too.trabalho.spa.jdbc.CriaConexao;
 import too.trabalho.spa.tipos.Questionario;
 
 /**

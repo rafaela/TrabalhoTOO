@@ -9,5 +9,6 @@ public interface Constantes {
 	public static String ALERTA_SUCESSO_IMPORTACAO = "Importação de dados finalizada com sucesso",
 						 ALERTA_ERRO_IMPORTACAO = "Não foi possível realizar a importação. Verifique "
 						 		+ "a integridade do arquivo de importação",
-						 IMPORTACAO = "Importação de dados";
+						 IMPORTACAO = "Importação de dados",
+						 TITULO_GRAFICO_REL = "Relatório de participantes por curso";
 }

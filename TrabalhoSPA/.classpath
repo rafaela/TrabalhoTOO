@@ -4,7 +4,11 @@
 	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-1.8"/>
 	<classpathentry kind="con" path="org.eclipse.fx.ide.jdt.core.JAVAFX_CONTAINER"/>
 	<classpathentry kind="lib" path="jar/postgresql-42.2.5.jar"/>
-	<classpathentry kind="lib" path="jar/jfreechart-1.0.19.jar"/>
+	<classpathentry kind="lib" path="jar/jfreechart-1.0.19.jar">
+		<attributes>
+			<attribute name="javadoc_location" value="jar:platform:/resource/TrabalhoSPA/jar/jfreechart-1.0.19.jar!/org"/>
+		</attributes>
+	</classpathentry>
 	<classpathentry kind="lib" path="jar/jcommon-1.0.23.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>

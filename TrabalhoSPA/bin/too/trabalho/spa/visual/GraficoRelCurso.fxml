@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.BorderPane?>
+
+<SplitPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="437.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="too.trabalho.spa.controller.GraficoRelCursoController">
+  <items>
+    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="432.0" prefWidth="598.0">
+         <children>
+            <Button fx:id="btnTabela" layoutX="510.0" layoutY="366.0" mnemonicParsing="false" onAction="#btnClicado" text="Tabela" />
+            <Pane fx:id="pane" layoutX="40.0" layoutY="44.0" prefHeight="309.0" prefWidth="521.0" />
+         </children></AnchorPane>
+  </items>
+</SplitPane>
