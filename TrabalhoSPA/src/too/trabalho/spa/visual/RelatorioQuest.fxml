@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.BorderPane?>
+
+<SplitPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="437.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="too.trabalho.spa.controller.RelatorioQuestController">
+  <items>
+    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="432.0" prefWidth="598.0">
+         <children>
+            <TableView fx:id="relatorio" layoutX="79.0" layoutY="50.0" prefHeight="299.0" prefWidth="441.0">
+              <columns>
+                <TableColumn fx:id="categoria" prefWidth="280.0" text="Categoria" />
+                <TableColumn fx:id="participantes" prefWidth="160.0" text="Participantes" />
+              </columns>
+            </TableView>
+            <Button fx:id="btnGrafico" layoutX="434.0" layoutY="366.0" mnemonicParsing="false" onAction="#btnClicado" text="Gerar Gráfico" />
+            <Text fx:id="titulo" fontSmoothingType="LCD" layoutX="170.0" layoutY="32.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Relatório de Participantes" textAlignment="CENTER" wrappingWidth="254.0">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Text>
+         </children></AnchorPane>
+  </items>
+</SplitPane>

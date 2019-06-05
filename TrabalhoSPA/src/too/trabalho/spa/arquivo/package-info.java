@@ -1,5 +1,5 @@
 /**
- * Fornece as classes para manipulação dos arquivos
+ * Fornece as classes para manipulaÃ§Ã£o dos arquivos
  */
 
 package too.trabalho.spa.arquivo;

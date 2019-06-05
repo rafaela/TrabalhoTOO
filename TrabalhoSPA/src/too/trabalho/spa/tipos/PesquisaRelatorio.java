@@ -1,4 +1,4 @@
-package too.trabalho.spa.dados;
+package too.trabalho.spa.tipos;
 
 /**
  * Classe para obter quantos de alunos de cada curso respondeu a pesquisa.

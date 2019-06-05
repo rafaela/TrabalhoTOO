@@ -2,34 +2,35 @@ package too.trabalho.spa.controller;
 
 import java.io.IOException;
 
+import javafx.application.Application;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
-import javafx.scene.control.Button;
-import javafx.scene.control.SplitPane;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.scene.layout.AnchorPane;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
-import too.trabalho.spa.dados.PesquisaRelatorio;
 import too.trabalho.spa.dao.PesquisaDAO;
+import too.trabalho.spa.tipos.PesquisaRelatorio;
 
 /**
- * Controlador do visual do programa. Tela Principal a ser exibida
+ * Classe resposável por gerar o relatório por curso.
  * @author Rafaela
  *
  */
-public class RelatorioCursoController {
+public class RelatorioCursoController extends Application{
 	
 	@FXML TableView<PesquisaRelatorio> relatorio;
 	@FXML TableColumn<PesquisaRelatorio, String> cursos;
 	@FXML TableColumn<PesquisaRelatorio, Integer> participantes;
 	
-	@FXML Button btnGrafico;
-	
+	/**
+	 * Obtém os dados contidos no banco e insere em uma tabela.
+	 */
 	@FXML
 	public void initialize(){
 		PesquisaDAO pesquisaDAO = new PesquisaDAO();
@@ -43,22 +44,32 @@ public class RelatorioCursoController {
 		relatorio.setItems(relatorioList);
 	}
 	
+	/**
+	 * Botão que ao ser clicado irá chamar a janela que contém o gráfico.
+	 */
 	@FXML
 	public void btnClicado(){
 		Stage stage = new Stage();
-		
-		Stage stageGrafico = (Stage) btnGrafico.getScene().getWindow();
 		try {
-			SplitPane root = FXMLLoader.load(getClass().getResource("../visual/GraficoRel.fxml"));
-			 
+			start(stage);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+	}
+
+	/**
+	 * Cria a janela que contém o gráfico.
+	 */
+	@Override
+	public void start(Stage stage) throws Exception {
+		try {
+			AnchorPane root = FXMLLoader.load(getClass().getResource("../visual/GraficoCurso.fxml"));
 			Scene scene = new Scene(root);
 			stage.setScene(scene);
 			stage.initModality(Modality.APPLICATION_MODAL);	
-			stageGrafico.hide();
 			stage.show();
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
-		
 	}
 }

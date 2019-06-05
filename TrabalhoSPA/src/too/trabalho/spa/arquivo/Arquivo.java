@@ -2,50 +2,33 @@ package too.trabalho.spa.arquivo;
 
 import java.io.File;
 import java.io.FileNotFoundException;
-import java.util.ArrayList;
-import java.util.List;
 
+import static too.trabalho.spa.dados.Constantes.*;
 import javafx.stage.FileChooser;
 
 public class Arquivo {	
 	
 	/** 
-	 * Exibe uma caixa de di�logo para o usu�rio indicar o nome do diret�rio e arquivo que ser� aberto. 
+	 * Exibe uma caixa de diálogo para o usuário indicar o nome do diretório e arquivo que será aberto. 
 	 * 
-	 * @param titulo <code>String</code> com o nome da barra de t�tulo da caixa de di�logo.
+	 * @param titulo <code>String</code> com o nome da barra de título da caixa de diálogo.
 	 *        
-	 * @return <code>List</code> com o nome dos arquivos a serem abertos. Se o usu�rio cancelar a 
-	 * opera��o (clicar no bot�o "Cancelar") ser� retornado <code>null</code>.
+	 * @return <code>List</code> com o nome dos arquivos a serem abertos. Se o usuário cancelar a 
+	 * operação (clicar no botão "Cancelar") será retornado <code>null</code>.
 	 *        
 	 */
 	
-	public static List<File> dialogoAbrirArquivo( String titulo) {
-		List<File> arquivos = new ArrayList<>();
-		 FileChooser dialogoAbrir = new FileChooser();
-		  dialogoAbrir.setTitle(titulo);
-		  //dialogoAbrir.getExtensionFilters().addAll(new FileChooser.ExtensionFilter("TXT Files", "*.txt"));
-		  dialogoAbrir.getExtensionFilters().addAll(new FileChooser.ExtensionFilter("CSV Files", "*.csv"));
-		  dialogoAbrir.setInitialDirectory(new File("arquivos" + File.separator));
-		  //arquivos.addAll(dialogoAbrir.showOpenMultipleDialog(null));
-		  arquivos.add(dialogoAbrir.showOpenDialog(null).getAbsoluteFile());
-		  if(!arquivos.isEmpty())
-			  return arquivos;
-		  return null;
+	public static File dialogoAbrirArquivo( String titulo) {
+		FileChooser dialogoAbrir = new FileChooser();
+		dialogoAbrir.setTitle(titulo);
+		dialogoAbrir.getExtensionFilters().addAll(new FileChooser.ExtensionFilter(TIPO_ARQUIVO,
+				EXTENSAO));
+		dialogoAbrir.setInitialDirectory(new File(CAMINHO));
+		File arquivo = dialogoAbrir.showOpenDialog(null).getAbsoluteFile();
+		return arquivo;
+  
 	}
-	
-	/**
-	 * Obt�m os arquivos que foram selecionados pelo usu�rio
-	 * @return array contendo dados dos arquivos.
-	 */
-	public static List<File> obtemArquivos(){
-		//ArquivoTexto arquivoTexto = new ArquivoTexto();
-		List<File> arquivos = dialogoAbrirArquivo("Escolha os arquivos");
-		if(arquivos != null)
-			return arquivos;
-		
-		return null;
-	}
-	
+
 	/**
 	 * Le os dados do arquivo de texto
 	 * @param pathName nome do arquivo a ser lido
@@ -61,7 +44,6 @@ public class Arquivo {
 		} catch (FileNotFoundException e) {
 			System.out.println("Não foi possivel abrir o arquivo " + pathName);
 		}
-		
 		return dados;
 	}
 }

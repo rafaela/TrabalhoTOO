@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.BorderPane?>
+
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="347.0" prefWidth="508.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+   <center>
+      <Pane prefHeight="350.0" prefWidth="555.0" BorderPane.alignment="CENTER">
+         <children>
+            <TableView fx:id="relatorio" layoutX="52.0" layoutY="52.0" prefHeight="229.0" prefWidth="404.0">
+              <columns>
+                <TableColumn fx:id="curso" prefWidth="255.0" text="Curso" />
+                <TableColumn fx:id="quantidade" prefWidth="148.0" text="Quantidade" />
+              </columns>
+            </TableView>
+            <Label layoutX="111.0" layoutY="14.0" text="Relatório de Participantes por Curso">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Label>
+         </children>
+      </Pane>
+   </center>
+</BorderPane>

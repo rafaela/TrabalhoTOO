@@ -9,6 +9,7 @@ import java.util.List;
  *
  */
 public class Pesquisa {
+	private int codigo, tipoPesquisa;
 	private String questionado, campus, curso;
 	private List<Questionario> questionario;
 	
@@ -37,12 +38,32 @@ public class Pesquisa {
 	}
 	
 	/**
+	 * Obtém o código
+	 */
+	public int getCodigo() {
+		return codigo;
+	}
+	
+	public void setCodigo(int codigo) {
+		this.codigo = codigo;
+	}
+
+	public int getTipoPesquisa() {
+		return tipoPesquisa;
+	}
+
+	public void setTipoPesquisa(int tipoPesquisa) {
+		this.tipoPesquisa = tipoPesquisa;
+	}
+
+	/**
 	 * Obtém a pessoa que foi questionada.
 	 */
 	public String getQuestionado() {
 		return questionado;
 	}
 	
+
 	/**
 	 * Determina a pessoa que foi questionada.
 	 */
@@ -85,6 +106,10 @@ public class Pesquisa {
 		return questionario;
 	}
 	
+	public void setQuestionario(List<Questionario> questionario) {
+		this.questionario = questionario;
+	}
+
 	/**
 	 * Insere uma pergunta no questionário
 	 * @param questionario

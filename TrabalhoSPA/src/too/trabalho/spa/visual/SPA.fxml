@@ -16,7 +16,8 @@
           </Menu>
           <Menu mnemonicParsing="false" text="Relatório">
             <items>
-              <MenuItem mnemonicParsing="false" onAction="#chamaRelatorio" text="Relatório" />
+              <MenuItem mnemonicParsing="false" onAction="#chamaRelatorioCurso" text="Relatório por Curso" />
+                  <MenuItem mnemonicParsing="false" onAction="#chamaRelatorioCat" text="Relatório por Categoria" />
             </items>
           </Menu>
           <Menu mnemonicParsing="false" text="Help">

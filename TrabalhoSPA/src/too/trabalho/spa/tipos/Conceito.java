@@ -6,28 +6,37 @@ package too.trabalho.spa.tipos;
  * @author Rafaela
  *
  */
-public enum Conceito {
-	OTIMO("Ótimo", 5),
-	BOM("Bom", 4),
-	SATISFATORIO("Satisfatório", 3),
-	RUIM("Ruim", 2),
-	PESSIMO("Péssimo", 1),
-	INEXISTENTE("Inexistente", 0),
-	NAO_CONHECO("Não Conheço", 0);
-	
+public class Conceito {
+	private int codigo;
 	private String conceito;
 	private int peso;
 	
+	public Conceito() {
+		conceito = "";
+	}
+
 	/**
 	 * Inicializa os atributos do objeto com os valores especificados pelo usuário da classe.
 	 * @param conceito <code>String</code> com o nome do conceito.
 	 * @param peso <code>int</code> com o valor do conceito.
 	 */
-	private Conceito(String conceito, int peso) {
+	public Conceito(String conceito, int peso) {
 		this.conceito = conceito;
 		this.peso = peso;
 	}
 	
+	
+	/**
+	 * Obtém o código.
+	 */
+	public int getCodigo() {
+		return codigo;
+	}
+	
+	public void setCodigo(int codigo) {
+		this.codigo = codigo;
+	}
+
 	/**
 	 * Obtém o conceito.
 	 */
@@ -56,4 +65,13 @@ public enum Conceito {
 	public void setPeso(int peso) {
 		this.peso = peso;
 	}
+
+	@Override
+	public String toString() {
+		return String.format("Codigo: %s, conceito: %s, peso: %d", codigo, conceito, peso);
+	}
+
+	
+	
+	
 }

@@ -20,16 +20,15 @@ public class QuestionarioDAO {
 	 * @param questionario
 	 * @param cod_pesquisa
 	 */
-	public void insere(Questionario questionario, int cod_pesquisa){
-		String sql = "insert into questionario (cod_pesquisa,pergunta, conceito,"
-				+ " cod_pergunta) values (?, ?, ?, ?)";
+	public void insere(int cod_pesquisa, int cod_pergunta, Questionario questionario){
+		String sql = "insert into questionario (cod_pesquisa, cod_pergunta, cod_conceito)"
+				+ "values (?, ?, ?)";
 		PreparedStatement statement;
 		try {
 			statement = connection.prepareStatement(sql);
 			statement.setInt(1, cod_pesquisa);
-			statement.setString(2, questionario.getPergunta());
-			statement.setString(3, questionario.getConceito());
-			statement.setInt(4, questionario.getCodigo());
+			statement.setInt(2, cod_pergunta);
+			statement.setInt(3, questionario.getConceito());
 			
 			statement.execute();
 			statement.close();

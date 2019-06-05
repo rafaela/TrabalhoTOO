@@ -7,26 +7,37 @@ package too.trabalho.spa.tipos;
  *
  */
 public class Questionario {
-	private String pergunta;
-	private String conceito;
 	private int codigo;
+	private String pergunta;
+	private String tipoPergunta;
+	private int conceito;
 	
 	/**
 	 * Inicializa as variáveis de instância com o valor padrão.
 	 */
 	public Questionario() {
-		pergunta = conceito = "";  
+		pergunta = "";  
 	}
 
 	/**
 	 * Inicializa os atributos do objeto com os valores especificados pelo usuário da classe. 
 	 * @param pergunta <code>String</code> com a pergunta que será feita
 	 * @param conceito <code>Enum</code> com a resposta que foi dada a pergunta.
-	 * @param codigo <code>int</code> com o código de identificação da pergunta
 	 */
-	public Questionario(String pergunta, String conceito, int codigo) {
+	public Questionario(String pergunta, String tipoPergunta, int conceito) {
 		this.pergunta = pergunta;
+		this.tipoPergunta = tipoPergunta;
 		this.conceito = conceito;
+	}
+	
+	/**
+	 * Obtém o código
+	 */
+	public int getCodigo() {
+		return codigo;
+	}
+	
+	public void setCodigo(int codigo) {
 		this.codigo = codigo;
 	}
 
@@ -37,50 +48,48 @@ public class Questionario {
 		return pergunta;
 	}
 
+	
 	/**
 	 * Determina a pergunta
 	 */
 	public void setPergunta(String pergunta) {
 		this.pergunta = pergunta;
 	}
+	
+	/**
+	 * Obtém o tipo da pergunta 
+	 */
+	public String getTipoPergunta() {
+		return tipoPergunta;
+	}
+	
+	/**
+	 * Determina o tipo da pergunta. 
+	 */
+	public void setTipoPergunta(String tipoPergunta) {
+		this.tipoPergunta = tipoPergunta;
+	}
 
 	/**
 	 * Obtém o conceito
 	 */
-	public String getConceito() {
+	public int getConceito() {
 		return conceito;
 	}
 
 	/**
 	 * Determina o conceito
 	 */
-	public void setConceito(String conceito) {
+	public void setConceito(int conceito) {
 		this.conceito = conceito;
 	}
 
-	/**
-	 * Obtém o código da pergunta
-	 */
-	public int getCodigo() {
-		return codigo;
-	}
-
-	/**
-	 * Determina o código
-	 */
-	public void setCodigo(int codigo) {
-		this.codigo = codigo;
-	}
-	
 	/**
 	 * Transforma o objeto Questionário em uma representação <code>String</code>
 	 */
 	@Override
 	public String toString() {
-		return String.format("Pergunta: %s, conceito: %s, codigo: %s\n", pergunta, conceito, codigo);
+		return String.format("Código: %d, pergunta: %s, tipoPergunta: %s, conceito: %d",
+				codigo, pergunta, tipoPergunta, conceito);
 	}
-	
-	
-
-	
 }
