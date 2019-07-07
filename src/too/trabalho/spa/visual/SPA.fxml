@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.BorderPane?>
+
+<BorderPane fx:id="root" prefHeight="500.0" prefWidth="700.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="too.trabalho.spa.controller.SPAController">
+   <top>
+      <MenuBar BorderPane.alignment="CENTER">
+        <menus>
+          <Menu mnemonicParsing="false" text="Arquivo">
+            <items>
+              <MenuItem mnemonicParsing="false" onAction="#chamaImportaArquivo" text="Importar Dados" />
+            </items>
+          </Menu>
+          <Menu mnemonicParsing="false" text="Relatório">
+            <items>
+              <MenuItem mnemonicParsing="false" onAction="#chamaRelatorioCurso" text="Relatório por Curso" />
+                  <MenuItem mnemonicParsing="false" onAction="#chamaRelatorioCat" text="Relatório por Categoria" />
+                  <MenuItem mnemonicParsing="false" onAction="#chamaRelatorioAv" text="Avaliaçao por Curso" />
+                  <MenuItem mnemonicParsing="false" onAction="#chamaRelAvCategoria" text="Avaliação por Categoria" />
+            </items>
+          </Menu>
+        </menus>
+      </MenuBar>
+   </top>
+</BorderPane>

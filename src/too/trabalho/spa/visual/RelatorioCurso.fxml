@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.embed.swing.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.BorderPane?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="675.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="too.trabalho.spa.controller.RelatorioCursoController">
+   <children>
+      <TableView fx:id="relatorio" layoutX="20.0" layoutY="61.0" prefHeight="213.0" prefWidth="636.0">
+        <columns>
+          <TableColumn fx:id="cursos" prefWidth="345.0" text="Curso" />
+          <TableColumn fx:id="participantes" prefWidth="290.0" text="Participantes" />
+        </columns>
+      </TableView>
+      <ComboBox fx:id="comboPesquisa" layoutX="100.0" layoutY="25.0" prefWidth="150.0" promptText="Pesquisa" />
+      <Label layoutX="275.0" layoutY="24.0" prefHeight="27.0" prefWidth="293.0" text="Relatório de participantes por Curso">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+      <SwingNode fx:id="swingNode" AnchorPane.bottomAnchor="14.0" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="20.0" AnchorPane.topAnchor="286.0" />
+   </children>
+</AnchorPane>
